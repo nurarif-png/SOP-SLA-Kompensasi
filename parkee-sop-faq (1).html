@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOP &amp; FAQ — Kompensasi Hard Complain PARKEE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red: #C81E3A;
+    --red-deep: #8F1329;
+    --red-tint: #FBEAEA;
+    --ink: #201C1A;
+    --ink-soft: #5B5650;
+    --paper: #FAF7F2;
+    --paper-raised: #FFFFFF;
+    --line: #E4DDD3;
+    --font-display: 'Libre Franklin', system-ui, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --red: #FF5A75;
+      --red-deep: #FF8093;
+      --red-tint: #3A1420;
+      --ink: #EFEAE3;
+      --ink-soft: #B4ACA1;
+      --paper: #17140F;
+      --paper-raised: #201B15;
+      --line: #3A332A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --red: #FF5A75;
+    --red-deep: #FF8093;
+    --red-tint: #3A1420;
+    --ink: #EFEAE3;
+    --ink-soft: #B4ACA1;
+    --paper: #17140F;
+    --paper-raised: #201B15;
+    --line: #3A332A;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--red-deep);}
+
+  .skip{
+    background:var(--paper);
+    color:var(--ink);
+    padding:.5rem 1rem;
+    position:absolute;
+    left:1rem; top:-3rem;
+    transition:top .2s ease;
+    z-index:100;
+  }
+  .skip:focus{top:1rem;}
+
+  header.masthead{
+    border-bottom:1px solid var(--line);
+    background:var(--paper-raised);
+  }
+  .masthead-inner{
+    max-width:960px;
+    margin:0 auto;
+    padding:2.25rem 1.5rem 1.75rem;
+  }
+  .wordmark{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-bottom:1.6rem;
+  }
+  .wordmark svg{flex:none;}
+
+  .doc-kicker{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:.82rem;
+    color:var(--red);
+    margin-bottom:.6rem;
+  }
+  h1.doc-title{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(1.7rem, 3.4vw, 2.55rem);
+    line-height:1.14;
+    letter-spacing:-0.015em;
+    margin:0 0 1rem;
+    color:var(--ink);
+    max-width:34ch;
+  }
+  .doc-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem 1.6rem;
+    font-family:var(--font-display);
+    font-size:.85rem;
+    color:var(--ink-soft);
+  }
+  .doc-meta dt{font-weight:600; color:var(--ink);}
+  .doc-meta div{display:flex; gap:.4rem;}
+
+  .layout{
+    max-width:960px;
+    margin:0 auto;
+    padding:2.5rem 1.5rem 5rem;
+    display:grid;
+    grid-template-columns:200px minmax(0,1fr);
+    gap:3rem;
+    align-items:start;
+  }
+  nav.toc{
+    position:sticky;
+    top:1.75rem;
+    font-family:var(--font-display);
+    font-size:.86rem;
+  }
+  nav.toc .toc-label{
+    font-weight:700;
+    text-transform:none;
+    color:var(--ink-soft);
+    margin-bottom:.75rem;
+    font-size:.78rem;
+  }
+  nav.toc ol{
+    list-style:none;
+    margin:0; padding:0;
+    border-left:1px solid var(--line);
+  }
+  nav.toc li{margin:0;}
+  nav.toc a{
+    display:block;
+    padding:.4rem 0 .4rem .9rem;
+    margin-left:-1px;
+    border-left:1px solid transparent;
+    color:var(--ink-soft);
+    text-decoration:none;
+    line-height:1.35;
+  }
+  nav.toc a:hover{color:var(--ink); border-left-color:var(--ink-soft);}
+
+  main{min-width:0;}
+
+  section{margin-bottom:3.25rem;}
+  section > h2{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:1.5rem;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0 0 .35rem;
+    scroll-margin-top:1.5rem;
+  }
+  section > p.section-lede{
+    font-family:var(--font-display);
+    font-size:.95rem;
+    color:var(--ink-soft);
+    margin:0 0 1.5rem;
+    max-width:60ch;
+  }
+  p{margin:0 0 1rem; max-width:68ch;}
+  ul, ol.plain{margin:0 0 1rem; padding-left:1.3rem; max-width:64ch;}
+  li{margin-bottom:.4rem;}
+  strong{color:var(--ink); font-weight:600;}
+
+  .callout{
+    background:var(--red-tint);
+    border-left:3px solid var(--red);
+    padding:1rem 1.25rem;
+    border-radius:2px;
+    font-family:var(--font-display);
+    font-size:.9rem;
+    color:var(--ink);
+    max-width:64ch;
+  }
+  .callout strong{color:var(--red-deep);}
+
+  /* classification cards */
+  .tier-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+  .tier-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:1.5rem;
+    padding:1.1rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .tier-name{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:.95rem;
+    color:var(--ink);
+  }
+  .tier-name span{
+    display:block;
+    font-weight:500;
+    color:var(--ink-soft);
+    font-size:.8rem;
+    margin-top:.15rem;
+  }
+  .tier-row.is-hard .tier-name{color:var(--red-deep);}
+  .tier-row p{margin:0;}
+
+  /* SOP stepper */
+  .stepper{
+    counter-reset:step;
+    border-top:1px solid var(--line);
+  }
+  .step{
+    position:relative;
+    display:grid;
+    grid-template-columns:3rem 1fr;
+    gap:1.25rem;
+    padding:1.4rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .step-num{
+    counter-increment:step;
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:.85rem;
+    color:var(--red);
+    padding-top:.1rem;
+  }
+  .step-num::before{content: counter(step, decimal-leading-zero);}
+  .step h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1rem;
+    margin:0 0 .35rem;
+    color:var(--ink);
+  }
+  .step p{margin:0; font-size:.97rem;}
+  .step .step-actor{
+    display:inline-block;
+    font-family:var(--font-display);
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:.15rem .5rem;
+    border-radius:2px;
+    margin-bottom:.5rem;
+  }
+
+  /* table */
+  .table-wrap{overflow-x:auto; max-width:100%; border:1px solid var(--line);}
+  table{
+    border-collapse:collapse;
+    width:100%;
+    min-width:420px;
+    font-family:var(--font-display);
+    font-size:.9rem;
+  }
+  th, td{
+    text-align:left;
+    padding:.75rem 1rem;
+    border-bottom:1px solid var(--line);
+  }
+  thead th{
+    background:var(--paper);
+    color:var(--ink-soft);
+    font-weight:600;
+    font-size:.78rem;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.num{font-weight:700; color:var(--red-deep);}
+  tfoot td{
+    font-size:.8rem;
+    color:var(--ink-soft);
+    border-bottom:none;
+    padding-top:.6rem;
+  }
+
+  /* FAQ */
+  .faq details{
+    border-bottom:1px solid var(--line);
+    padding:1.1rem 0;
+  }
+  .faq details:first-child{border-top:1px solid var(--line);}
+  .faq summary{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1rem;
+    color:var(--ink);
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:1.3rem;
+    color:var(--red);
+    flex:none;
+    transition:transform .15s ease;
+  }
+  .faq details[open] summary::after{content:"–";}
+  .faq .faq-answer{
+    margin-top:.75rem;
+    font-size:.97rem;
+    max-width:64ch;
+  }
+  .faq .faq-answer p:last-child{margin-bottom:0;}
+
+  footer{
+    border-top:1px solid var(--line);
+    max-width:960px;
+    margin:0 auto;
+    padding:2rem 1.5rem 3rem;
+    font-family:var(--font-display);
+    font-size:.8rem;
+    color:var(--ink-soft);
+  }
+  footer a{color:var(--ink-soft); text-decoration:underline;}
+
+  @media (max-width: 720px){
+    .layout{grid-template-columns:1fr; padding-top:1.75rem;}
+    nav.toc{position:static; margin-bottom:1rem;}
+    nav.toc ol{
+      display:flex; flex-wrap:wrap; gap:.25rem 0;
+      border-left:none; border-top:1px solid var(--line);
+    }
+    nav.toc li{width:50%;}
+    nav.toc a{border-left:none; padding:.5rem 0;}
+    .tier-row{grid-template-columns:1fr; gap:.35rem;}
+    .step{grid-template-columns:2.2rem 1fr; gap:.9rem;}
+  }
+
+  :focus-visible{outline:2px solid var(--red); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="wordmark">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.19 7 11.44a1.5 1.5 0 0 0 2 0C13.28 21.19 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="currentColor" style="color:var(--red)"/>
+      </svg>
+      PARKEE
+    </div>
+    <p class="doc-kicker">Panduan Operasional — Layanan Pelanggan</p>
+    <h1 class="doc-title">SOP &amp; FAQ Kompensasi Pelanggan Hard Complain</h1>
+    <dl class="doc-meta">
+      <div><dt>Rujukan</dt><dd>Framework Pengelolaan Kompensasi Pelanggan (Hard Complain) PARKEE</dd></div>
+      <div><dt>Pemilik proses</dt><dd>Tim Layanan Pelanggan</dd></div>
+      <div><dt>Persetujuan</dt><dd>Manager CS &amp; Manajemen</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Daftar isi">
+    <p class="toc-label">Daftar isi</p>
+    <ol>
+      <li><a href="#ringkasan">Ringkasan</a></li>
+      <li><a href="#klasifikasi">Klasifikasi komplain</a></li>
+      <li><a href="#sop">SOP pemberian kompensasi</a></li>
+      <li><a href="#nominal">Tabel nominal</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <section id="ringkasan">
+      <h2>Ringkasan kebijakan</h2>
+      <p class="section-lede">Apa kebijakan ini, dan kenapa ada.</p>
+      <p>Kebijakan ini mengatur pemberian kompensasi (dalam bentuk kupon/voucher) kepada pengguna Aplikasi PARKEE yang mengajukan keluhan dengan kategori <strong>Hard Complain</strong>. Tujuannya bukan sekadar permintaan maaf, tapi juga langkah konkret untuk menjaga kepercayaan pengguna dan menekan risiko rating atau review negatif yang bisa berdampak pada reputasi PARKEE.</p>
+      <div class="callout">
+        <strong>Prinsip utama:</strong> kompensasi hanya diberikan untuk kategori Hard Complain, hasil evaluasi tim CS, dan disetujui oleh lead terkait sebelum ditawarkan ke pengguna.
+      </div>
+    </section>
+
+    <section id="klasifikasi">
+      <h2>Klasifikasi komplain</h2>
+      <p class="section-lede">Tiga tingkatan komplain berdasarkan kompleksitas penyelesaiannya.</p>
+      <div class="tier-grid">
+        <div class="tier-row">
+          <div class="tier-name">Low<span>Komplain ringan</span></div>
+          <p>Masalah kecil atau kurang signifikan, biasanya selesai tanpa eskalasi khusus.</p>
+        </div>
+        <div class="tier-row">
+          <div class="tier-name">Middle<span>Komplain menengah</span></div>
+          <p>Memerlukan analisis lebih lanjut atau intervensi yang sedikit lebih kompleks dari penanganan standar.</p>
+        </div>
+        <div class="tier-row is-hard">
+          <div class="tier-name">Hard<span>Komplain sulit</span></div>
+          <p>Memerlukan penanganan khusus dan solusi kompleks — bisa melibatkan perubahan besar atau penggantian layanan. Berisiko memicu rating/review negatif dan persepsi buruk terhadap PARKEE. <strong>Hanya kategori ini yang berhak atas kompensasi.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sop">
+      <h2>SOP pemberian kompensasi</h2>
+      <p class="section-lede">Alur kerja tim layanan pelanggan, dari identifikasi keluhan sampai tindak lanjut.</p>
+      <div class="stepper">
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Identifikasi Hard Complain</h3>
+            <p>Kenali ciri keluhan yang masuk kategori Hard Complain — misalnya keluhan yang sama terjadi berulang, atau aplikasi error sehingga transaksi terhambat.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Verifikasi keluhan</h3>
+            <p>Pastikan keluhan benar-benar memenuhi kriteria Hard Complain sebelum dilanjutkan ke tahap evaluasi.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Evaluasi tingkat keparahan</h3>
+            <p>Tentukan seberapa berat dampak keluhan untuk menentukan jenis dan nilai kompensasi yang sesuai.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Jelaskan tindakan ke pelanggan</h3>
+            <p>Sampaikan kepada pelanggan langkah yang akan diambil untuk menyelesaikan masalah, termasuk rencana kompensasi.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS + Lead</span>
+            <h3>Konfirmasi &amp; ajukan ke lead</h3>
+            <p>Sebelum menawarkan kompensasi, CS wajib koordinasi dengan lead terkait. Keputusan akhir pemberian kompensasi ada di tangan lead, berdasarkan hasil evaluasi CS.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Tawarkan kompensasi/kupon</h3>
+            <p>Setelah disetujui, sampaikan penawaran kompensasi ke pelanggan sebagai bentuk ganti rugi atas ketidaknyamanan yang dialami.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Sesuaikan nilai kupon</h3>
+            <p>Tetapkan nominal final sesuai tabel kompensasi dan kebijakan perusahaan yang berlaku.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Konfirmasi &amp; catat</h3>
+            <p>Setelah pelanggan mengonfirmasi penerimaan, catat kompensasi/kupon tersebut ke dalam catatan pelanggan dan Gsheet terkait.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div>
+            <span class="step-actor">CS</span>
+            <h3>Tindak lanjut &amp; pantau</h3>
+            <p>Pastikan pelanggan puas dengan kompensasi yang diberikan, kumpulkan umpan balik, dan pantau penggunaan kupon untuk melihat dampaknya terhadap retensi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nominal">
+      <h2>Tabel Kompensasi Berdasarkan Jenis Keluhan</h2>
+      <p class="section-lede">Besaran kupon berdasarkan jenis keluhan yang terjadi.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Jenis keluhan</th><th>Nominal kompensasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gangguan layanan <span style="color:var(--ink-soft); font-weight:400;">— server pusat atau gangguan pembayaran di aplikasi</span></td><td class="num">Rp10.000</td></tr>
+            <tr><td>Masalah teknis <span style="color:var(--ink-soft); font-weight:400;">— bug atau ketidaknyamanan penggunaan aplikasi</span></td><td class="num">Rp10.000</td></tr>
+            <tr><td>Special case <span style="color:var(--ink-soft); font-weight:400;">— komplain berulang yang viral di media sosial dan memicu rating/review buruk</span></td><td class="num">&gt; Rp50.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-display); font-size:.8rem; color:var(--ink-soft); margin-top:.6rem;">Kompensasi di atas Rp50.000 wajib mendapat persetujuan lebih lanjut dari manajemen, dengan mempertimbangkan dampak dari keluhan pengguna.</p>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ — Pertanyaan yang sering muncul</h2>
+      <p class="section-lede">Untuk tim CS yang menjalankan proses ini sehari-hari.</p>
+      <div class="faq">
+
+        <details>
+          <summary>Siapa saja yang berhak mendapat kompensasi?</summary>
+          <div class="faq-answer">
+            <p>Hanya pengguna dengan keluhan kategori <strong>Hard Complain</strong> yang terdokumentasi dengan jelas, terkait masalah teknis, pelayanan yang kurang memuaskan, atau pengalaman pengguna yang buruk. Komplain Low dan Middle tidak masuk skema kompensasi ini.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Apakah CS bisa langsung menawarkan kompensasi ke pelanggan?</summary>
+          <div class="faq-answer">
+            <p>Tidak. CS wajib mengevaluasi kasus dan berkoordinasi dengan lead terlebih dahulu. Kompensasi hanya boleh ditawarkan setelah lead menyetujui, berdasarkan hasil evaluasi yang diajukan CS.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Berapa nominal kompensasi yang diberikan?</summary>
+          <div class="faq-answer">
+            <p>Rp10.000 untuk gangguan layanan atau masalah teknis. Untuk special case — misalnya komplain berulang yang sudah viral di media sosial — nominalnya bisa di atas Rp50.000, tapi wajib persetujuan manajemen terlebih dahulu.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Kasus seperti apa yang termasuk "special case"?</summary>
+          <div class="faq-answer">
+            <p>Kasus di mana komplain yang sama terjadi berulang kali dan sudah menyebar ke media sosial (viral), sehingga memicu pengguna lain untuk berhenti memakai PARKEE, atau menyebabkan rating/review buruk di aplikasi.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Apa yang harus disampaikan ke pelanggan saat memberi kompensasi?</summary>
+          <div class="faq-answer">
+            <p>Pesan komunikasi harus mencakup tiga hal: permintaan maaf, rincian kompensasi yang diberikan, dan penjelasan bahwa langkah perbaikan sudah atau sedang diambil.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ke mana kompensasi yang sudah diberikan dicatat?</summary>
+          <div class="faq-answer">
+            <p>Setiap kompensasi/kupon yang diberikan wajib dicatat di Gsheet penerima kupon, dan detail keluhannya dicatat di Gsheet komplain, sebagai bagian dari riwayat pelanggan.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Apa tujuan pemberian kompensasi ini bagi PARKEE?</summary>
+          <div class="faq-answer">
+            <p>Memulihkan kepuasan pelanggan yang kecewa, mencegah kerugian reputasi, menunjukkan tanggung jawab PARKEE atas masalah yang dialami pengguna, dan pada akhirnya meningkatkan retensi pelanggan.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Apakah ada pemantauan setelah kupon diberikan?</summary>
+          <div class="faq-answer">
+            <p>Ya. Tim CS melakukan tindak lanjut untuk memastikan pelanggan puas, dan perusahaan memantau penggunaan kupon untuk menganalisis dampaknya terhadap retensi dan kepuasan pelanggan.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  Disusun berdasarkan dokumen "Framework Pengelolaan Kompensasi Pelanggan dengan Keluhan Keras (Hard Complain) PARKEE." Untuk pencatatan, gunakan Gsheet Penerima Kupon dan Gsheet Komplain sesuai proses internal tim CS.
+</footer>
+
+</body>
+</html>
